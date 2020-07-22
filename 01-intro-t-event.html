@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="container text-center">
+    <h1 id="pesan">Pesan</h1>
+    <img id="preview" class="my-5" width="300" height="300" src="./assets/emoticon/3.png" alt="">
+
+    <input oninput="slide()" min="0" value="50" max="100" class="custom-range" type="range" name="" id="range">
+    <script>
+        function slide() {
+            let x = document.getElementById('range').value
+            let preview = document.getElementById('preview')
+
+            if (x >= 0 && x <= 20) {
+                preview.src = "./assets/emoticon/1.png"
+            } else if (x > 20 && x <= 40) {
+                preview.src = "./assets/emoticon/2.png"
+
+            } else if (x > 40 && x <= 60) {
+                preview.src = "./assets/emoticon/3.png"
+            } else if (x > 60 && x <= 80) {
+                preview.src = "./assets/emoticon/4.png"
+            } else {
+                preview.src = "./assets/emoticon/5.png"
+            }
+
+            document.getElementById('pesan').innerHTML = x
+        }
+    </script>
+</body>
+
+</html>

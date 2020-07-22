@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Final Tugas</title>
+</head>
+
+<body class="container">
+    <div id="app"></div>
+    </div>
+
+    <script>
+        const url = "https://alfabank-blog.herokuapp.com/api/v1/blogs/all"
+        fetch(url)
+            .then(response => response.json())
+            .then(blogResponse => {
+                let arrayBlog = []
+                let templateHTML = ""
+
+                arrayBlog = blogResponse.data
+                Array.from(arrayBlog).forEach(object=>{
+                    templateHTML += `
+                    <div class="card my-3">
+                        <img class="card-img-top" src="${object.cover}">
+                        <div class="card-body">
+                        <h5 class="card-title">${object.judul}</h5>
+                        <p class="card-text">${object.konten}</p>
+                        <p class="card-text"><small class="text-muted">${object.nama_penulis}</small></p>
+                    </div>
+                    </div>`    
+                })
+                document.getElementById('app').innerHTML = templateHTML
+            })
+            .catch(error=>console.log)
+    </script>
+</body>
+
+</html>

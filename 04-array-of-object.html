@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Input data</h1>
+            <label for="nama">nama</label>
+            <input type="text" name="" id="nama" class="form-control">
+
+            <label for="email">email</label>
+            <input type="text" name="" id="email" class="form-control">
+
+            <label for="program_kursus">program_kursus</label>
+            <input type="text" name="" id="program_kursus" class="form-control">
+            <br>
+            <button onclick="tambahData()" class="btn btn-danger btn-block">tambah</button>
+        </div>
+
+        <div class="col-md-6">
+            <h1>Daftar data</h1>
+            <table class="table table-striped">
+                <thead>
+                    <th>nama</th>
+                    <th>email</th>
+                    <th>program kursus</th>
+                </thead>
+                <tbody id="app">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        let daftarUser = [
+            {
+                nama: "ajisyahroni",
+                email: "ajisyahroni14@gmail.com",
+                program_kursus: "mekanik"
+            },
+            {
+                nama: "ardi",
+                email: "ardi@gmail.com",
+                program_kursus: "tekom"
+            },
+            {
+                nama: "yatno",
+                email: "yatno@gmail.com",
+                program_kursus: "office"
+            }
+        ]
+
+        function render(HTML) {
+            let app = document.getElementById('app')
+            let template = ""
+            daftarUser.forEach(data => {
+                template += `<tr>
+                            <td>${data.nama}</td>
+                            <td>${data.email}</td>
+                            <td>${data.program_kursus}</td>
+                        </tr>`
+            })
+            app.innerHTML = template
+        }
+
+        function tambahData() {
+            let nama = document.getElementById('nama').value
+            let email = document.getElementById('email').value
+            let program_kursus = document.getElementById('program_kursus').value
+
+            let object = {
+                nama: nama,
+                email: email,
+                program_kursus: program_kursus
+            }
+
+            daftarUser.push(object)
+            render()
+        }
+        render()
+    </script>
+</body>
+
+</html>

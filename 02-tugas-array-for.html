@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <h1>Input barang</h1>
+            <input type="text" name="" id="namaItem" class="form-control my-2">
+            <button onclick="tambah()" class="btn btn-danger">tambah</button>
+        </div>
+
+
+        <div class="col-md-6">
+            <h1>Daftar barang</h1>
+            <ul id="daftarItem">
+                <li>barang</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        var arrayBarang = [];
+        function tambah() {
+            var namaItem = document.getElementById('namaItem').value
+
+            if (namaItem != "") {
+                let daftarBarangHTML = "";
+
+                arrayBarang.push(namaItem)
+                arrayBarang.forEach(element => {
+                    daftarBarangHTML += "<li>" + element + "</li>"
+                });
+                document.getElementById('daftarItem').innerHTML = daftarBarangHTML;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

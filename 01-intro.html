@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <h1 id="title">Introduction</h1>
+
+    <button onclick="ubahJudul()" class="btn btn-info">ubah judul</button>
+
+    <script>
+        function ubahJudul() {
+            var title = document.getElementById('title');
+            title.innerHTML = "Pengenalan Javascript"
+            title.style = "color:red;"
+        }
+
+    </script>
+</body>
+
+</html>

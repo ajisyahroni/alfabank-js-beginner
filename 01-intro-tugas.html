@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <h1>Tugas 1</h1>
+
+    <label for="email">email</label>
+    <input type="email" name="" id="email" class="form-control">
+
+    <label for="password">password</label>
+    <input type="password" name="" id="password" class="form-control">
+
+    <br>
+    <button onclick="lihatPassword()" class="btn btn-block btn-warning">lihat password</button>
+    <button onclick="loginUser()" class="btn btn-block btn-danger">login</button>
+    <button onclick="clear()" class="btn btn-block btn-info">clear</button>
+
+
+
+
+    <script>
+        function clear(){
+            document.getElementById('email').value = ""
+            document.getElementById('password').value = ""
+        }
+        function loginUser() {
+            var email = document.getElementById('email')
+            var password = document.getElementById('password')
+
+            if (email.value == "") {
+                email.classList.add('is-invalid')
+            }
+            else {
+                if (email.classList.contains('is-invalid')) {
+                    email.classList.remove('is-invalid')
+                }
+                email.classList.add('is-valid')
+            }
+
+
+
+            if (password.value == "") {
+                password.classList.add('is-invalid')
+            }
+            else {
+                if (password.classList.contains('is-invalid')) {
+                    password.classList.remove('is-invalid')
+                }
+                password.classList.add('is-valid')
+            }
+        }
+
+        function lihatPassword() {
+            var title = document.getElementById('password');
+
+            if (title.type == 'text') {
+                title.type = 'password'
+            }
+            else {
+                title.type = 'text'
+            }
+        }
+
+    </script>
+</body>
+
+</html>

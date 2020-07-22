@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <div class="text-center">
+        <button id="randomBtn" onclick="gantiGambar()" class="btn btn-block btn-primary">random</button>
+        <hr>
+        <br>
+        <img id="preview" class="img-thumb" src="./assets/img/bg-1.PNG" alt="">
+
+    </div>
+    <script>
+        function gantiGambar() {
+            let arrayOfWarna = [
+                "btn-info",
+                "btn-success",
+                "btn-primary",
+                "btn-danger",
+                "btn-warning",
+            ];
+            let nomor_acak_warna = Math.floor(Math.random() * 5);
+            document.getElementById('randomBtn').className = "btn btn-block " + arrayOfWarna[nomor_acak_warna]
+
+            let daftarGambar = [
+                "/bg-1.PNG",
+                "/bg-2.png",
+                "/bg-3.jpg",
+                "/bg-4.png",
+                "/bg-5.jpg",
+            ]
+            let image = document.getElementById('preview')
+            let nomor_acak = Math.floor(Math.random() * daftarGambar.length)
+            image.src = "./assets/img" + daftarGambar[nomor_acak]
+        }
+    </script>
+</body>
+
+</html>

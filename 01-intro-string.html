@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body class="container">
+    <div id="app"></div>
+    <button onclick="readMore()" class="btn">lanjutkan membaca</button>
+
+    <script>
+        let konten = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, doloremque excepturi? Repudiandae sed ipsum assumenda. Itaque repellat, officia deserunt veritatis voluptate ullam modi molestiae enim laboriosam, laudantium porro deleniti recusandae voluptatem architecto, id eos eum cum. Corporis dolore pariatur ipsa dolorem iusto sed dolorum eligendi eaque quos exercitationem alias error ut repellat, tempora dolor et dolores nemo, ipsum quisquam culpa temporibus provident cumque voluptas perspiciatis. Rerum nihil non reiciendis aspernatur nostrum praesentium at adipisci veritatis ratione, consequatur minima accusantium animi eligendi nobis alias perferendis assumenda, sint a expedita eum eos, aut doloribus sequi! Possimus amet temporibus dolore ipsa nemo natus."
+        let app = document.getElementById('app')
+        app.innerHTML = "<h4>" + konten.slice(0, 20) + "..." + "</h4>";
+
+        function readMore() {
+            let app = document.getElementById('app')
+            app.innerHTML = "<h4>" + konten.slice(0, konten.length) + "..." + "</h4>";
+        }
+    </script>
+</body>
+
+</html>
